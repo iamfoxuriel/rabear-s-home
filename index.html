@@ -10,7 +10,7 @@
     <meta property="og:url" content="http://github.com/index.html">
     <meta property="og:site_name" content="Rabear's">
     <meta property="og:description" content="Life's a struggle">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet"
@@ -51,7 +51,7 @@
     <script>
         $(document).ready(function () {
             setInterval(function () {
-                var $element = $('.random-image');
+                var $element = $('#random-image');
                 if(!!$element){
                     $element.attr('src', 'https://unsplash.it/1920/1080/?random&time=' + (+new Date()));
                 }
@@ -86,14 +86,14 @@
 
                     <div class="item active">
 
-                        <img id="random-image" src="https://unsplash.it/1920/1080/?random">
+                        <img id="random-image">
                     </div>
 
                     <!-- 自适应大图 -->
                     <script>
                         var img0 = new Image();
                         var imageTag0 = document.getElementById("random-image");
-                        img0.src = imageTag0.src;
+                        img0.src = imageTag0.src = 'https://unsplash.it/1920/1080/?random&time=' + (+new Date());
                         img0.onload = function () {
                             if (img0.width / img0.height <= document.body.clientWidth / document.body.clientHeight) {
                                 imageTag0.style.width = document.body.clientWidth + "px";
